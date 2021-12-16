@@ -51,18 +51,19 @@ function playRound(playerMove, computerMove) {
 
 /* use prompt() to get the player's move */
 function getPlayerMove() {
-  let move = prompt("What's your move?");
+  do {
+    let move = prompt("What's your move?");
 
-  if (move.toLowerCase() === "rock") {
-    return rock;
-  } else if (move.toLowerCase() === "paper") {
-    return paper;
-  } else if (move.toLowerCase() === "scissors") {
-    return scissors;
-  } else {
-    console.log("You entered an invalid response. Please enter 'Rock', 'Paper', or 'Scissors'");
-    return computerPlay();
-  }
+    if (move.toLowerCase() === "rock") {
+      return rock;
+    } else if (move.toLowerCase() === "paper") {
+      return paper;
+    } else if (move.toLowerCase() === "scissors") {
+      return scissors;
+    } else {
+      console.log("You entered an invalid response. Please enter 'Rock', 'Paper', or 'Scissors'");
+    }
+  } while (true);
 }
 
 /* select random move for computer */
