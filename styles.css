@@ -1,0 +1,21 @@
+.header {
+  font-size: 48px;
+  font-family: sans-serif;
+  color: blue;
+  text-align: center;
+}
+
+.moveSelector,
+.scoreBoard {
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 36px;
+}
+
+.scoreBoard {
+  padding-bottom: 36px;
+}
+
+

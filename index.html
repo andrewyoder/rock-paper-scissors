@@ -3,9 +3,31 @@
   <head>
     <title>Rock, Paper, Scissors</title>
     <meta charset='utf-8'>
+    <link rel='stylesheet' href='styles.css'>
   </head>
   <body>
-    <p style="font-size:48px; font-family:sans-serif; color:blue; text-align: center;">Rock, Paper, Scissors</p>
+    <div class="header">Rock, Paper, Scissors</div>
+
+    <br><br>
+
+    <div class="moveSelector">
+      <p id="moveSelectorText">Select a move:</p>
+      <div class="moveSelectorButtons">
+        <button id="ROCK">Rock</button>
+        <button id="PAPER">Paper</button>
+        <button id="SCISSORS">Scissors</button>
+      </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="scoreBoard">
+      <div>Score:</div>
+      <div id="playerScore">0</div>
+      <div> vs. </div>
+      <div id="computerScore">0</div>
+    </div>
+
     <script src="game.js"></script>
   </body>
 </html>
