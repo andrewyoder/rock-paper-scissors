@@ -1,14 +1,22 @@
 /**
- * Add button listeners to capture gameplay; record result
- * and update score displayed
+ * Global variables for updating elements
  */
 const playerScore = document.querySelector('#playerScore');
 const computerScore = document.querySelector('#computerScore');
+
+const currentMoves = document.querySelector('.currentMoves');
+
+/**
+ * Add button listeners to capture gameplay; record result
+ * and update score displayed
+ */
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
   button.addEventListener('click', (e) => {
     let result = playRound(e.target.id);
+
     if (result === "DRAW") return;
+    // update the scores
     if (result === "WIN") {
       playerScore.textContent++;
     }
@@ -25,7 +33,7 @@ buttons.forEach((button) => {
       finalScore.textContent = `You ${result}! Final Score: `
           + `${playerScore.textContent} to ${computerScore.textContent}`;
       finalScore.style.cssText = 'text-align: center';
-
+      finalScore.style.color = (result === "WIN") ? 'green' : 'red';
       container.appendChild(finalScore);
 
       // reset scores for next game
@@ -45,17 +53,17 @@ function playRound(playerMove) {
   let computerMove = computerPlay();
 
   if (playerMove === computerMove) {
-    console.log("It's a Draw!");
+    currentMoves.textContent = "It's a Draw!";
     return("DRAW");
   }
   
   if (playerMove === 'ROCK' && computerMove === 'SCISSORS' ||
       playerMove === 'PAPER' && computerMove === 'ROCK' ||
       playerMove === 'SCISSORS' && computerMove === 'PAPER') {
-    console.log(`You Win! ${playerMove} beats ${computerMove}!`);
+    currentMoves.textContent = `You Win this round! ${playerMove} beats ${computerMove}!`;
     return("WIN");
   }
-  console.log(`You Lose! ${computerMove} beats ${playerMove}!`);
+  currentMoves.textContent = `You Lose this round! ${computerMove} beats ${playerMove}!`;
   return("LOSE");
 }
 

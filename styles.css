@@ -6,7 +6,8 @@
 }
 
 .moveSelector,
-.scoreBoard {
+.scoreBoard,
+.currentMoves {
   margin: auto;
   align-items: center;
   justify-content: center;
